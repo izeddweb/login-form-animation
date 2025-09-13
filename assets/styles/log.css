@@ -34,28 +34,23 @@ body {
   width: 500px;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  position: relative;
 }
 .sec-content .form-content .bg-form {
   z-index: 1;
-  height: 138%;
-  width: 61%;
+  height: 100%;
+  width:50%;
   background-color: rgb(255, 0, 0);
-  position: absolute;
-  transform:translateX(-50%) rotate(12deg);
   transition: 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.form-content .bg-form.translate {
-  transform: translateX(50%)rotate(12deg);
-}
+
 
 .form-content form {
   width: 50%;
@@ -66,11 +61,7 @@ body {
   transition: .9s ease;
 }
 
-.form-content form.hide {
-  transform: translateY(322px);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-}
+
 
 .form-content form .title-form {
   font-size: 26px;
@@ -120,16 +111,7 @@ body {
   background-color: #d3d0d0;
   cursor: pointer;
 }
-.btn-log {
-  height: 25px;
-  width: 80px;
-  padding: 2px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #d3d0d0;
-  cursor: pointer;
-  transform: rotate(-12deg);
-}
+
 .form-content form button:hover {
   background-color: #bbb8b8;
 }
