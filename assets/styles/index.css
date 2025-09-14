@@ -1,0 +1,140 @@
+/* 
+
+font-family: "Bebas Neue", sans-serif;
+ */
+
+/*  @@@@@@@ General rulles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+input {
+  border: none;
+  outline: none;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  scroll-behavior: smooth;
+  font-family: "Outfit", sans-serif;
+  position: relative;
+}
+/*  star header */
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #d6d3d3;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-container .logo {
+  height: 70px;
+  line-height: 70px;
+  font-size: 40px;
+  font-weight: bolder;
+}
+.header-container .logo .strong {
+  /* mix-blend-mode:difference; 
+  color: rgb(255, 254, 254); */
+    font-size: 60px;
+  height: 100%;
+  width: 100px;
+  color: #008000;
+  font-family: "Asimovian", sans-serif;
+  font-weight: 900;
+  transform: rotateZ(348deg);
+ 
+}
+.nav {
+  width: 30%;
+  height: 100%;
+}
+.nav .list-items {
+  height: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.nav .list-items .mode-container,
+.nav .list-items .item {
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.nav .list-items .item {
+  width: 40px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .list-items .mode-container {
+  width: 80px;
+  border-radius: 20px;
+  padding: 2px;
+  display: inline-flex;
+  justify-content: flex-start;
+}
+.nav .list-items .mode-container .mode {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: green;
+  display: inline-flex;
+}
+/*  star main */
+main {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 70px;
+}
+.main-container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+.notification {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0 20px 0;
+  flex-direction: column;
+  background-color: #0080045c;
+  border-radius: 5px;
+}
+.user {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+}
+.description {
+  width: 100%;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+
+  border-radius: 5px;
+}

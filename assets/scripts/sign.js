@@ -10,15 +10,14 @@ const eyeIcons = document.querySelectorAll('.fa-eye, .fa-eye-slash');
 
 
 let userData = JSON.parse(localStorage.getItem('users') ) || [];
-btnSign.addEventListener('click',changeLocation);
-
-
+// btnSign.addEventListener('click',changeLocation);
 
 class User {
   constructor(name, pass , passConfirm) {
     this.name = name;
     this.pass = pass;
     this.passConfirm = passConfirm;
+    this.date = new Date();
     this.id = Math.random().toString(36).substring(2, 9);
   }
 }
@@ -43,7 +42,7 @@ function getValues(username, userpass , passConfirmValue) {
   const users = new User(username, userpass , passConfirmValue);
   userData.push(users);
   storeData(userData);
-  console.log(userData);
+  changeLocation ()
 }
 
 //  function to store data in local storege
