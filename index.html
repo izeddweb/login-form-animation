@@ -39,7 +39,26 @@
         <div class="user"></div>
         <div class="description"></div>
       </div>
-      <h4>hello from index</h4>
+      <div class="control-note">
+        <input type="text" name="note" id="note-id" placeholder="add note">
+        <button type="button">add note</button>
+      </div>
+      <section class="tasks">
+        <div class="task">
+          <p class="note">note 1</p>
+          <span class="edit" data-complite="false">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </span>
+          <span class="delete">
+            <i class="fa-solid fa-trash"></i>
+          </span>
+        </div>
+        <div class="task ">
+          <p class="note done">note 2</p>
+          <span class="edit" data-complite="false"></span>
+          <span class="delete"></span>
+        </div>
+      </section>
     </main>
     <script src="/assets/scripts/index.js"></script>
   </body>
