@@ -12,18 +12,35 @@ font-family: "Bebas Neue", sans-serif;
 li {
   list-style: none;
 }
+a{
+  text-decoration: none;
+}
 input {
   border: none;
   outline: none;
 }
+i{
+  cursor: pointer;
+}
 html,
 body {
   scroll-behavior: smooth;
+  
 }
 body {
   scroll-behavior: smooth;
   font-family: "Outfit", sans-serif;
   position: relative;
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: #02020293;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 12;
 }
 /*  star header */
 header {
@@ -70,6 +87,7 @@ header {
   gap: 5px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .nav .list-items .mode-container,
 .nav .list-items .item {
@@ -84,6 +102,7 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 .nav .list-items .mode-container {
   width: 80px;
   border-radius: 20px;
@@ -108,6 +127,16 @@ main {
   width: 80%;
   height: 100%;
   margin: auto;
+}
+.popup{
+  position: absolute;
+  width: 80%;
+  height: 300px;
+  margin: auto;
+  background-color: red;
+  top: 50%;
+  border-radius: 5px;
+  z-index: 11;
 }
 .notification {
   width: 100%;
@@ -206,7 +235,7 @@ main {
   border-radius: 5px;
   background-color: #fff;
 }
-.task:hover,
+.note:hover,
 .note.done{
   background-color: #a9d1a3;
 }
@@ -226,4 +255,71 @@ main {
 }
 .task .delete:hover{
   background-color: #f35252;
+}
+
+/* popup */
+.popup {
+  position: absolute;
+  width: 80%;
+  height: 400px;
+  margin: auto;
+  background-color: rgb(212, 206, 206);
+  top: 90px;
+  border-radius: 5px;
+  z-index: 22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup .list-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  height: 55px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 2px;
+  position: relative;
+}
+.popup .list-items .item {
+     display: flex;
+  justify-content: center;
+  flex-direction: column;
+    height: 90px;
+    width: 50px;
+    margin: auto;
+    border-radius: 50%;
+    transition: .3s;
+}
+.popup .list-items .item .link{
+    background-color: red;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  z-index: 12;
+  transition: .3s;
+
+}
+
+
+.popup .list-items .item .des-link{
+  height: 25px;
+  width: 60px;
+  padding: 2px;
+  display: block;
+  transition: .3s;
+} 
+.item.active .link{
+    transform: translateY(-30px);
+    border: 4px solid rgb(153, 139, 139);
+}
+.item.active .des-link{
+    transform: translateY(-30px);
 }

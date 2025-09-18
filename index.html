@@ -15,17 +15,15 @@
     <link rel="stylesheet" href="/assets/styles/index.css" />
     <title>Document</title>
   </head>
-  <body>
-   <header class="header">
+  <body class="bady ">
+    <div class="overlay"></div>
+    <header class="header">
       <div class="header-container">
         <div class="logo"><strong class="strong">MY</strong> To Do App</div>
         <nav class="nav">
           <ul class="list-items">
             <li class="item">
               <i class="fa-solid fa-right-to-bracket"></i>
-            </li>
-            <li class="item">
-              <i class="fa-solid fa-right-from-bracket"></i>
             </li>
             <li class="item mode-container">
               <span class="mode"></span>
@@ -35,30 +33,31 @@
       </div>
     </header>
     <main class="main-container">
+       <div class="popup">
+        <ul class="list-items">
+          <li class="item">
+            <a href="/log.html" class="link"><i class="fa-solid fa-user"></i></a>
+            <span class="des-link">Log In</span>
+          </li>
+          <li class="item">
+            <a href="/signup.html" class="link"> <i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+            <span class="des-link">Sign In</span>
+          </li>
+          <li class="item active">
+            <a href="/index.html" class="link "><i class="fa-solid fa-user-secret"></i></a>
+            <span class="des-link">Guest</span>
+          </li>
+        </ul>
+      </div>
       <div class="notification">
         <div class="user"></div>
         <div class="description"></div>
       </div>
       <div class="control-note">
-        <input type="text" name="note" id="note-id" placeholder="add note">
-        <button type="button">add note</button>
+        <input type="text" name="note" id="note-id" placeholder="add note" />
+        <button type="button" class="add-note">add note</button>
       </div>
-      <section class="tasks">
-        <div class="task">
-          <p class="note">note 1</p>
-          <span class="edit" data-complite="false">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </span>
-          <span class="delete">
-            <i class="fa-solid fa-trash"></i>
-          </span>
-        </div>
-        <div class="task ">
-          <p class="note done">note 2</p>
-          <span class="edit" data-complite="false"></span>
-          <span class="delete"></span>
-        </div>
-      </section>
+      <section class="tasks"></section>
     </main>
     <script src="/assets/scripts/index.js"></script>
   </body>
