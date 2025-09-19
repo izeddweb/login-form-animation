@@ -1,26 +1,38 @@
 //  get data from log page
 const user = JSON.parse(localStorage.getItem("user"));
 const notificationUser = document.querySelector(".user");
+const toggleMode = document.querySelector(".mode-container ");
 const description = document.querySelector(".description");
+const header = document.querySelector(".header");
 const popup = document.querySelector(".popup");
+const guestMsg = document.querySelector(".guest-msg");
 const overlay = document.querySelector(".overlay");
 const links = document.querySelectorAll(".popup .item");
 const body = document.body;
 
-window.onload = function () {
-  // notificationUser.innerHTML = `Welcome ${user.name}`;
-  popupAnim();
-};
+window.onload = showPopup;
+
+function showPopup(message) {
+  popup.style.display = "flex";
+  overlay.style.display = "block";
+  guestMsg.textContent = message;
+  setTimeout(() => {
+    popup.style.display = "none";
+    overlay.style.display = "none";
+    guestMsg.textContent = "";
+  }, 5000);
+  showPopup("Welcome! You will be log in as guest in 5 seconds.");
+}
+// Example usage:
+
 links.forEach((ele) => {
   ele.addEventListener("click", function (e) {
-    e.preventDefault();
     links.forEach((ele) => ele.classList.remove("active"));
     this.classList.add("active");
 
     if (ele.children[1].textContent == "Guest") {
       overlay.style.display = "none";
       popup.style.display = "none";
-   
     }
   });
 });
@@ -125,14 +137,7 @@ function createIcon() {
     }
   });
 }
-// popup
 
-function popupAnim() {
-  setInterval(() => {
-    popup.style.display = "none";
-    overlay.style.display = "none";
-  }, 3000);
-}
 // close popup
 document.addEventListener("click", close);
 
@@ -141,6 +146,13 @@ function close(e) {
     popup.style.display = "none";
     overlay.style.display = "none";
   }
+}
+
+// toggle mode
+function toggleEventMode() {
+  toggleMode.classList.toggle("right");
+  body.classList.toggle("black-theme");
+  header.classList.toggle("black-theme");
 }
 
 // localStorage.clear()

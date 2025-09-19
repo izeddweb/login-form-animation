@@ -9,23 +9,36 @@ font-family: "Bebas Neue", sans-serif;
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --main-color: #008000;
+  --sup-color: #a1d8a2;
+  --navy: #2f4156;
+  --teal: #567c8d;
+  --beige: #f5efeb;
+  --sky: #1ad5e7;
+  --sky: #6bdce6;
+}
+.black-theme {
+  background-color: #121111;
+  color: #fff;
+}
 li {
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
 }
 input {
   border: none;
   outline: none;
 }
-i{
+i {
   cursor: pointer;
+  color: var(--main-color);
 }
 html,
 body {
   scroll-behavior: smooth;
-  
 }
 body {
   scroll-behavior: smooth;
@@ -41,12 +54,12 @@ body {
   left: 0;
   bottom: 0;
   z-index: 12;
+  display: none;
 }
 /*  star header */
 header {
   width: 100%;
   height: 70px;
-  background-color: #d6d3d3;
   position: fixed;
   top: 0;
   left: 0;
@@ -67,16 +80,13 @@ header {
   font-weight: bolder;
 }
 .header-container .logo .strong {
-  /* mix-blend-mode:difference; 
-  color: rgb(255, 254, 254); */
-    font-size: 60px;
+  font-size: 60px;
   height: 100%;
   width: 100px;
   color: #008000;
   font-family: "Asimovian", sans-serif;
   font-weight: 900;
   transform: rotateZ(348deg);
- 
 }
 .nav {
   width: 30%;
@@ -109,14 +119,20 @@ header {
   padding: 2px;
   display: inline-flex;
   justify-content: flex-start;
+  transition: all 0.3s ease;
+}
+.nav .list-items .mode-container.right {
+  justify-content: flex-end;
 }
 .nav .list-items .mode-container .mode {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: green;
+  background-color: var(--main-color);
   display: inline-flex;
+  justify-content: flex-start;
 }
+
 /*  star main */
 main {
   width: 100vw;
@@ -128,16 +144,7 @@ main {
   height: 100%;
   margin: auto;
 }
-.popup{
-  position: absolute;
-  width: 80%;
-  height: 300px;
-  margin: auto;
-  background-color: red;
-  top: 50%;
-  border-radius: 5px;
-  z-index: 11;
-}
+
 .notification {
   width: 100%;
   display: flex;
@@ -145,7 +152,7 @@ main {
   align-items: center;
   margin: 5px 0 20px 0;
   flex-direction: column;
-  background-color: #0080045c;
+  background-color: var(--sup-color);
   border-radius: 5px;
 }
 .user {
@@ -167,45 +174,43 @@ main {
 
   border-radius: 5px;
 }
-.control-note{
+.control-note {
   width: 100%;
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 5px 0 20px 0;
-  /* padding: 5px ; */
   gap: 5px;
-    /* background-color: #0080045c; */
   border-radius: 5px;
 }
-.control-note input{
+.control-note input {
   width: 100%;
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px ;
-    border:1px solid #0080045c;
+  padding: 5px;
+  border: 1px solid #0080045c;
   border-radius: 5px;
   text-align: center;
 }
 
-.control-note button{
+.control-note button {
   width: 100px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px ;
-    background-color: #0080045c;
+  padding: 5px;
+  background-color: #0080045c;
   border-radius: 5px;
   border: none;
 }
-.control-note button:hover{
-    background-color: #0080043a;
+.control-note button:hover {
+  background-color: #0080043a;
 }
-.tasks{
+.tasks {
   width: 100%;
   height: auto;
   border-radius: 5px;
@@ -215,7 +220,7 @@ main {
   flex-direction: column;
   gap: 5px;
 }
-.task{
+.task {
   width: 100%;
   height: 40px;
   padding: 4px 10px;
@@ -223,11 +228,11 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:#d6d3d3;
+  background-color: #d6d3d3;
   border-radius: 5px;
 }
 
-.task .note{
+.task .note {
   width: 100%;
   height: 32px;
   line-height: 32px;
@@ -236,40 +241,51 @@ main {
   background-color: #fff;
 }
 .note:hover,
-.note.done{
+.note.done {
   background-color: #a9d1a3;
 }
 
 .task .delete,
-.task .edit{
+.task .edit {
   border-radius: 5px;
   width: 32px;
   height: 32px;
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
 }
-.task .edit:hover{
+.task .edit:hover {
   background-color: #a9d1a3;
 }
-.task .delete:hover{
+.task .delete:hover {
   background-color: #f35252;
 }
 
 /* popup */
+
 .popup {
   position: absolute;
   width: 80%;
   height: 400px;
   margin: auto;
-  background-color: rgb(212, 206, 206);
+  background-color: var(--beige);
   top: 90px;
   border-radius: 5px;
   z-index: 22;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.guest-msg{
+  background-color: red;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 5px;
+  width: 40%;
+  margin: auto;
+  border-radius: 4px;
 }
 .popup .list-items {
   display: flex;
@@ -278,48 +294,49 @@ main {
   width: 50%;
   height: 55px;
   margin: auto;
-  background-color: #fff;
+  background-color: red;
   border-radius: 5px;
   padding: 2px;
   position: relative;
 }
 .popup .list-items .item {
-     display: flex;
-  justify-content: center;
-  flex-direction: column;
-    height: 90px;
-    width: 50px;
-    margin: auto;
-    border-radius: 50%;
-    transition: .3s;
-}
-.popup .list-items .item .link{
-    background-color: red;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 90px;
+  width: 50px;
+  margin: auto;
   border-radius: 50%;
-  margin-bottom: 10px;
-  z-index: 12;
-  transition: .3s;
-
+  transition: all 0.3s ease;
 }
-
-
-.popup .list-items .item .des-link{
+.popup .list-items .item .des-link {
   height: 25px;
   width: 60px;
   padding: 2px;
   display: block;
-  transition: .3s;
-} 
-.item.active .link{
-    transform: translateY(-30px);
-    border: 4px solid rgb(153, 139, 139);
+  opacity: 0.1;
+  transform: translateY(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.item.active .des-link{
-    transform: translateY(-30px);
+
+.popup .list-items .item .link {
+  display: block;
+  transition: transform 0.3s ease, border 0.3s ease;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.item.active .link {
+  transform: translateY(-30px);
+  border: 4px solid rgb(153, 139, 139);
+}
+
+.item.active .des-link {
+  transform: translateY(-30px);
+  opacity: 1 !important; /* Ajouté pour forcer la priorité */
 }
