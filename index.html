@@ -13,17 +13,21 @@
     />
     <!-- link style -->
     <link rel="stylesheet" href="/assets/styles/index.css" />
+    <!-- media -->
+    <link rel="stylesheet" href="/assets/styles/media.css" />
     <title>Document</title>
   </head>
-  <body class="bady ">
+  <body class="body">
     <div class="overlay"></div>
     <header class="header">
       <div class="header-container">
         <div class="logo"><strong class="strong">MY</strong> To Do App</div>
         <nav class="nav">
           <ul class="list-items">
-            <li class="item">
-              <i class="fa-solid fa-right-to-bracket"></i>
+            <li class="item signup-header">
+              <a href="signup.html">
+                <i class="fa-solid fa-right-to-bracket"></i>
+              </a>
             </li>
             <li class="item mode-container">
               <span class="mode" onclick="toggleEventMode()"></span>
@@ -33,19 +37,23 @@
       </div>
     </header>
     <main class="main-container">
-       <div class="popup">
-        <div class="guest-msg"> </div>
+      <div class="popup">
+        <div class="guest-msg"></div>
         <ul class="list-items">
           <li class="item">
             <a href="log.html" class="link"><i class="fa-solid fa-user"></i></a>
             <span class="des-link">Log In</span>
           </li>
           <li class="item">
-            <a href="signup.html" class="link"> <i class="fa-solid fa-arrow-right-to-bracket"></i> </a>
+            <a href="signup.html" class="link">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            </a>
             <span class="des-link">Sign In</span>
           </li>
           <li class="item active">
-            <a href="index.html" class="link "><i class="fa-solid fa-user-secret"></i></a>
+            <a href="index.html" class="link"
+              ><i class="fa-solid fa-user-secret"></i
+            ></a>
             <span class="des-link">Guest</span>
           </li>
         </ul>
@@ -56,7 +64,9 @@
       </div>
       <div class="control-note">
         <input type="text" name="note" id="note-id" placeholder="add note" />
-        <button type="button" class="add-note">add note</button>
+        <button type="button" class="add-note">
+          <i class="fa-solid fa-plus"></i>
+        </button>
       </div>
       <section class="tasks"></section>
     </main>

@@ -10,16 +10,14 @@ font-family: "Bebas Neue", sans-serif;
   box-sizing: border-box;
 }
 :root {
-  --main-color: #008000;
-  --sup-color: #a1d8a2;
-  --navy: #2f4156;
-  --teal: #567c8d;
+  --main-color: #1a2736;
+  --sup-color: #688897;
+  --sup-sec-color: #6c818b;
   --beige: #f5efeb;
-  --sky: #1ad5e7;
-  --sky: #6bdce6;
+  --hover: #4feeb4;
 }
 .black-theme {
-  background-color: #121111;
+  background-color: var(--main-color);
   color: #fff;
 }
 li {
@@ -83,10 +81,9 @@ header {
   font-size: 60px;
   height: 100%;
   width: 100px;
-  color: #008000;
+  color: var(--hover);
   font-family: "Asimovian", sans-serif;
   font-weight: 900;
-  transform: rotateZ(348deg);
 }
 .nav {
   width: 30%;
@@ -101,12 +98,13 @@ header {
 }
 .nav .list-items .mode-container,
 .nav .list-items .item {
-  height: 40px;
+  height: 44px;
   background-color: #fff;
   border-radius: 50%;
+  border: 2px solid var(--main-color);
 }
 .nav .list-items .item {
-  width: 40px;
+  width: 44px;
   padding: 2px;
   display: flex;
   justify-content: center;
@@ -115,7 +113,7 @@ header {
 
 .nav .list-items .mode-container {
   width: 80px;
-  border-radius: 20px;
+  border-radius: 22px;
   padding: 2px;
   display: inline-flex;
   justify-content: flex-start;
@@ -171,7 +169,6 @@ main {
   justify-content: center;
   align-items: center;
   margin: 5px auto;
-
   border-radius: 5px;
 }
 .control-note {
@@ -191,24 +188,25 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  border: 1px solid #0080045c;
+  border: 1px solid var(--sup-color);
   border-radius: 5px;
   text-align: center;
 }
 
 .control-note button {
-  width: 100px;
+  width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
-  background-color: #0080045c;
+  background-color: var(--sup-color);
   border-radius: 5px;
   border: none;
+  font-size: 18px;
 }
 .control-note button:hover {
-  background-color: #0080043a;
+  background-color: var(--sup-sec-color);
 }
 .tasks {
   width: 100%;
@@ -228,7 +226,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d6d3d3;
+    border: 1px solid var(--sup-color);
   border-radius: 5px;
 }
 
@@ -236,13 +234,12 @@ main {
   width: 100%;
   height: 32px;
   line-height: 32px;
-  padding-left: 5px;
+  padding:0 5px;
   border-radius: 5px;
-  background-color: #fff;
 }
 .note:hover,
 .note.done {
-  background-color: #a9d1a3;
+  background-color: var(--sup-color);
 }
 
 .task .delete,
@@ -253,10 +250,10 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--beige);
 }
 .task .edit:hover {
-  background-color: #a9d1a3;
+  background-color: var(--hover);
 }
 .task .delete:hover {
   background-color: #f35252;
@@ -266,11 +263,12 @@ main {
 
 .popup {
   position: absolute;
-  width: 80%;
+  width: 100%;
   height: 400px;
   margin: auto;
   background-color: var(--beige);
   top: 90px;
+  left: 0;
   border-radius: 5px;
   z-index: 22;
   display: none;
@@ -278,14 +276,15 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.guest-msg{
-  background-color: red;
+.guest-msg{ 
+  background-color: var(--sup-color);
   height: 40px;
   line-height: 40px;
   padding: 0 5px;
   width: 40%;
   margin: auto;
   border-radius: 4px;
+  text-align: center;
 }
 .popup .list-items {
   display: flex;
@@ -294,7 +293,7 @@ main {
   width: 50%;
   height: 55px;
   margin: auto;
-  background-color: red;
+  background-color: var(--sup-color);
   border-radius: 5px;
   padding: 2px;
   position: relative;
@@ -308,6 +307,7 @@ main {
   margin: auto;
   border-radius: 50%;
   transition: all 0.3s ease;
+ 
 }
 .popup .list-items .item .des-link {
   height: 25px;
@@ -317,6 +317,7 @@ main {
   opacity: 0.1;
   transform: translateY(0);
   transition: transform 0.3s ease, opacity 0.3s ease;
+  
 }
 
 .popup .list-items .item .link {
@@ -328,12 +329,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+   border: 1px solid var(--beige);
 }
 
 .item.active .link {
   transform: translateY(-30px);
-  border: 4px solid rgb(153, 139, 139);
+  border: 4px solid rgb(253, 253, 253);
+  background-color: var(--sup-sec-color);
 }
 
 .item.active .des-link {

@@ -1,0 +1,103 @@
+
+
+/* media  tablette and mobile  */
+
+@media (max-width: 768px)  {
+  header {
+    height: 50px;
+  }
+  .header-container {
+    flex-direction: column;
+    height: 50px;
+    width: 100%;
+  }
+  .header-container .logo {
+    height: 50px;
+    font-size: 25px;
+  }
+  .header-container .logo .strong {
+    font-size: 30px;
+  }
+  .header-container .nav {
+    height: 40px;
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .nav .list-items {
+    height: 100%;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .nav .list-items .item {
+    height: 30px;
+    width: 30px;
+  }
+  .nav .list-items .mode-container {
+    height: 30px;
+    width: 50px;
+  }
+  .nav .list-items .mode-container .mode {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* main */
+  main {
+    padding: 10px;
+  }
+  .main-container {
+    margin-top: 70px;
+    width: 90%;
+    padding: 30px 10px;
+  }
+  .notification {
+    height: 30px;
+    line-height: 3px;
+  }
+  #note-id,
+  button.add-note {
+    font-size: 14px;
+    height: 30px;
+  }
+  .task {
+    height: 30px;
+    padding: 0;
+  }
+  .task .note {
+    height: 26px;
+    min-width: 140px;
+    font-size: 12px;
+  }
+  .task .edit,
+  .task .delete {
+    height: 25px;
+    width: 25px;
+  }
+  /* overlay */
+  .overlay {
+    top: -70px;
+  }
+  /* popup */
+  .popup {
+    font-size: 12px;
+    height: 200px;
+    max-width: 100%;
+  }
+  .guest-msg {
+    width: 90%;
+    font-size: 12px;
+  }
+  .popup .list-items {
+    width: 90%;
+    height: 44px;
+  }
+  .popup .list-items .item {
+    height: 70px;
+  }
+  .popup .list-items .item .link {
+    height: 40px;
+    width: 40px;
+  }
+}

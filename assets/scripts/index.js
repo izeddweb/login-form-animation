@@ -2,6 +2,7 @@
 const user = JSON.parse(localStorage.getItem("user"));
 const notificationUser = document.querySelector(".user");
 const toggleMode = document.querySelector(".mode-container ");
+const signupHeader = document.querySelector(".signup-header ");
 const description = document.querySelector(".description");
 const header = document.querySelector(".header");
 const popup = document.querySelector(".popup");
@@ -10,20 +11,26 @@ const overlay = document.querySelector(".overlay");
 const links = document.querySelectorAll(".popup .item");
 const body = document.body;
 
-window.onload = showPopup;
-
-function showPopup(message) {
-  popup.style.display = "flex";
-  overlay.style.display = "block";
-  guestMsg.textContent = message;
-  setTimeout(() => {
-    popup.style.display = "none";
-    overlay.style.display = "none";
-    guestMsg.textContent = "";
-  }, 5000);
-  showPopup("Welcome! You will be log in as guest in 5 seconds.");
-}
-// Example usage:
+window.onload = function () {
+  // showPopup("Welcome! You will be log in as guest in  ");
+};
+// show Popup
+// function showPopup(message) {
+//   let seconds = 5;
+//   popup.style.display = "flex";
+//   overlay.style.display = "block";
+//   guestMsg.innerHTML = `${message} <span id="popup-countdown">${seconds}</span> seconds.`;
+//   const interval = setInterval(() => {
+//     seconds--;
+//     document.getElementById("popup-countdown").textContent = `(${seconds})`;
+//     if (seconds === 0) {
+//       clearInterval(interval);
+//       popup.style.display = "none";
+//       overlay.style.display = "none";
+//       guestMsg.textContent = "";
+//     }
+//   }, 1000);
+//}
 
 links.forEach((ele) => {
   ele.addEventListener("click", function (e) {
@@ -84,11 +91,17 @@ addNoteBTN.addEventListener("click", getValues);
 //  get values from input
 function getValues(e) {
   const note = inputNote.value;
-  const taskNote = new Note(note);
-  clear(inputNote);
-  arrayOfTasks.push(taskNote);
-  sendDataToStore(arrayOfTasks);
-  drawTasks(arrayOfTasks);
+
+  if (note == "") {
+    showNotiffication(description, "You can't add empty note");
+  } else {
+    const taskNote = new Note(note);
+    clear(inputNote);
+    arrayOfTasks.push(taskNote);
+    sendDataToStore(arrayOfTasks);
+    drawTasks(arrayOfTasks);
+    showNotiffication(description, "Note added success");
+  }
 }
 // clear input
 function clear(element) {
@@ -125,6 +138,21 @@ function drawTasks(arrayOfTasks) {
     divTasks.appendChild(taskDiv);
     createIcon();
   }
+
+  const notes = document.querySelectorAll("p.note");
+
+  notes.forEach((ele) => {
+    ele.addEventListener("click", function (e) {
+      if (e.target.getAttribute("data-complit") === "false") {
+        e.target.style.textDecoration = "line-through";
+        e.target.setAttribute("data-complit", "true");
+        showNotiffication(description, "Note completed");
+      } else {
+        e.target.style.textDecoration = "none";
+        e.target.setAttribute("data-complit", "false");
+      }
+    });
+  });
 }
 
 function createIcon() {
@@ -154,5 +182,17 @@ function toggleEventMode() {
   body.classList.toggle("black-theme");
   header.classList.toggle("black-theme");
 }
+//  show notiffication MSG to user
+
+function showNotiffication(element, message) {
+  element.innerHTML = message;
+  setTimeout(() => {
+    element.innerHTML = "";
+  }, 3000);
+}
+
+signupHeader.addEventListener("click", function () {
+  window.location = "signup.html";
+});
 
 // localStorage.clear()
